@@ -26,7 +26,13 @@ def fix_image(upload):
     col1.write("Original Image :camera:")
     col1.image(image)
 
-    fixed = remove(image)
+    fixed = remove(
+        image,
+        alpha_matting=True,
+        alpha_matting_foreground_threshold=240,
+        alpha_matting_background_threshold=10,
+        alpha_matting_erode_structure_size=10,
+        alpha_matting_base_size=1000)
     col2.write("Fixed Image :wrench:")
     col2.image(fixed)
     st.sidebar.markdown("\n")
