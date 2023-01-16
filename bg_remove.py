@@ -27,7 +27,7 @@ def fix_image(upload):
     col1.image(image)
 
     fixed = remove(image)
-    print(image)
+
     col2.write("Fixed Image :wrench:")
     col2.image(fixed)
     st.sidebar.markdown("\n")
